@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learning/widgets/home.dart';
 import 'package:learning/widgets/splash_screen.dart';
 
 void main() {
@@ -12,13 +13,11 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Home')),
-      backgroundColor: Colors.blue,
-        body: const SplashScreen(
-          
-        ),
-      ),
+      initialRoute: '/',
+      routes: {
+        '/':(context) =>  const SplashScreen(),
+        '/home':(context) => const Home()
+      },
     );
   }
 }
