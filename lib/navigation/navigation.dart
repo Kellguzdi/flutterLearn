@@ -50,6 +50,9 @@ class __NavigationState
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
+        unselectedItemColor: Colors.grey,
+        unselectedLabelStyle: const TextStyle(color: Colors.grey),
+        showUnselectedLabels:true,
         onTap: _onItemTapped,
       ),
         )
