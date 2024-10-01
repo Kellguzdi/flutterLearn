@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:learning/widgets/home.dart';
+import 'package:learning/navigation/home.dart';
+import 'package:learning/navigation/navigation.dart'
+import 'package:learning/navigation/top.dart';
+import 'package:learning/navigation/reservation.dart';
+import 'package:learning/navigation/profile.dart';
 import 'package:learning/widgets/splash_screen.dart';
 
 void main() {
@@ -16,7 +20,11 @@ class MainApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/':(context) =>  const SplashScreen(),
-        '/home':(context) => const Home()
+        '/menu':(context) =>  const Navigation(),
+        '/home':(context) => const Home(),
+        '/top':(context) => const Top(),
+        '/reservations':(context) => const Reservation(),
+        '/profile':(context) => const Profile(),
       },
     );
   }

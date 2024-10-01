@@ -1,9 +1,9 @@
-/*
 import 'package:flutter/material.dart';
 import 'package:learning/widgets/content_column.dart';
 
-class Home extends StatelessWidget {
-  const Home({
+class Reservations extends StatelessWidget {
+//constructor
+  const Reservations({
     super.key,
   });
 
@@ -15,25 +15,14 @@ class Home extends StatelessWidget {
     return Scaffold(
       //Es recomendable tenerlo para cada vista
       appBar: AppBar(
-        title: const Text('Home'),
+        title: const Text('Reservations'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Row(
-          children: [
-            //extract Widget
-            ContentColumn(
-                title: 'Primer Columna', description: 'Aprendiendo flutter'),
-            ContentColumn(
-                title: 'Segunda Columna', description: 'Aprendiendo flutter2'),
-            ContentColumn(
-                title: 'Tercer Columna', description: 'Aprendiendo flutter3'),
-          ],
-        ),
-      ),
+      body: const Center(
+        child: Text('Reservations'),
+      )
       //floating esta fuera de body por ser propiedad de scaffold
       floatingActionButton: FloatingActionButton(
-        onPressed: () => print('This is javaScript ._?'),
+        onPressed: () => Navigator.pushNamed(context,'/profile'),
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
         child: const Icon(Icons.home),
@@ -43,4 +32,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-*/
