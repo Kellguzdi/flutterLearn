@@ -17,6 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
       //context es la clase en donde estas, palabra reservada que contiene una clase
       // que pide en donde estas en este momento y hacia donde quieres ir
       //pushReplacementNamed, reemplaza la url y elimina el historial( Not Go Back )
+      // ignore: use_build_context_synchronously
       Navigator.pushReplacementNamed(context, '/menu');
     });
   }

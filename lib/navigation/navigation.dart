@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:learning/navigation/home.dart';
+import 'package:learning/navigation/profile.dart';
+import 'package:learning/navigation/reservations.dart';
+import 'package:learning/navigation/top.dart';
 
 class Navigation extends StatefulWidget {
 //constructor
   const Navigation({
     super.key,
   });
-    @override
-    State<Navigation> createState() =>
-        _NavigationState();
+  @override
+  State<Navigation> createState() => _NavigationState();
 }
-class __NavigationState
-    extends State<Navigation> {
+
+class _NavigationState extends State<Navigation> {
   int _selectedIndex = 0;
+  // ignore: unused_field
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -26,10 +30,13 @@ class __NavigationState
     setState(() {
       _selectedIndex = index;
     });
-    Widget build(BuildContext context){
-        return Scaffold(
-            body: _widgetOptions.elementAt(_selectedIndex),
-            bottomNavigationBar: BottomNavigationBar(
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _widgetOptions.elementAt(_selectedIndex),
+      bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -52,10 +59,9 @@ class __NavigationState
         selectedItemColor: Colors.amber[800],
         unselectedItemColor: Colors.grey,
         unselectedLabelStyle: const TextStyle(color: Colors.grey),
-        showUnselectedLabels:true,
+        showUnselectedLabels: true,
         onTap: _onItemTapped,
       ),
-        )
-    }
+    );
   }
 }

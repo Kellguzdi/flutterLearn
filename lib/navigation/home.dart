@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:learning/widgets/content_column.dart';
 
 class Home extends StatelessWidget {
   const Home({
@@ -18,7 +17,7 @@ class Home extends StatelessWidget {
       ),
       body: const Center(
         child: Text('Inicio'),
-      )
+      ),
       //floating esta fuera de body por ser propiedad de scaffold
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context,'/top'),
