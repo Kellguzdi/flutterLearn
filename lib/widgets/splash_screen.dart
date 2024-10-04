@@ -18,7 +18,8 @@ class _SplashScreenState extends State<SplashScreen> {
       // que pide en donde estas en este momento y hacia donde quieres ir
       //pushReplacementNamed, reemplaza la url y elimina el historial( Not Go Back )
       // ignore: use_build_context_synchronously
-      Navigator.pushReplacementNamed(context, '/menu');
+      
+      Navigator.pushReplacementNamed(context, '/login');
     });
   }
 
