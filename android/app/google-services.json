@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "417087416398",
+    "project_id": "flutter-fc15f",
+    "storage_bucket": "flutter-fc15f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417087416398:android:a42d3f2da6b23bd796bb1f",
+        "android_client_info": {
+          "package_name": "com.example.learning"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSgVGOybRZ4ZUy9rkcqzBaquC8g4E1n5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

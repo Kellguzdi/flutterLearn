@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -10,6 +11,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _isObscure = true;
@@ -92,19 +94,30 @@ class _LoginState extends State<Login> {
                   height: 48,
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
                         if(_formKey.currentState!.validate()){
-                          print(
-                          "Datos : ${_emailController.text} ${_passwordController.text}");
+                          try {
+                            final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+                              email: _emailController.text,
+                              password: _passwordController.text,                  
+                            );
+                            print(credential);
+                          } on FirebaseAuthException catch (e) {
+                            if (e.code == 'user-not-found') {
+                              print('No user found for that email.');
+                            } else if (e.code == 'wrong-password') {
+                              print('Wrong password provided for that user.');
+                            }
+                          }
                         }
                       },
-                      child: const Text('Iniciar Sesion'),
                       style: OutlinedButton.styleFrom(
                           backgroundColor: Colors.pink,
                           foregroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16),
-                          ))),
+                          )),
+                      child: const Text('Iniciar Sesion')),
                 )
               ],
             ),
