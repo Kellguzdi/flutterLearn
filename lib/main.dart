@@ -3,6 +3,7 @@ import 'package:learning/modules/auth/screens/login.dart';
 import 'package:learning/navigation/home.dart';
 import 'package:learning/navigation/navigation.dart';
 import 'package:learning/navigation/reservations.dart';
+import 'package:learning/modules/auth/screens/create_account.dart';
 import 'package:learning/navigation/top.dart';
 import 'package:learning/navigation/profile.dart';
 import 'package:learning/widgets/splash_screen.dart';
@@ -35,7 +36,8 @@ class MainApp extends StatelessWidget {
         '/top': (context) => const Top(),
         '/reservations': (context) => const Reservations(),
         '/profile': (context) => const Profile(),
-        '/login': (context) => const Login()
+        '/login': (context) => const Login(),
+        '/register': (context) => const CreateAccount()
       },
     );
   }

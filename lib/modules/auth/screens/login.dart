@@ -118,6 +118,22 @@ class _LoginState extends State<Login> {
                             borderRadius: BorderRadius.circular(16),
                           )),
                       child: const Text('Iniciar Sesion')),
+                ),
+                SizedBox(
+                  height:30
+                ),
+                InkWell(
+                  onTap: ()=>{
+                    Navigator.pushNamed(context,'/register'),
+                  },
+                  child:Text(
+                    'Registrate!:D',
+                    style: TextStyle(
+                      color:Colors.blue,
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.blue
+                    )
+                  )
                 )
               ],
             ),

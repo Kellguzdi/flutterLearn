@@ -1,7 +1,8 @@
 //es lo primero que se muestra cuando el logotipo se carga
 
 import 'package:flutter/material.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -18,8 +19,15 @@ class _SplashScreenState extends State<SplashScreen> {
       // que pide en donde estas en este momento y hacia donde quieres ir
       //pushReplacementNamed, reemplaza la url y elimina el historial( Not Go Back )
       // ignore: use_build_context_synchronously
-      
-      Navigator.pushReplacementNamed(context, '/login');
+      FirebaseAuth.instance
+        .authStateChanges()
+        .listen((User? user) {
+          if (user != null) {
+            Navigator.pushReplacementNamed(context, '/menu');
+          }else{
+            Navigator.pushReplacementNamed(context, '/login');
+         }
+      });
     });
   }
 

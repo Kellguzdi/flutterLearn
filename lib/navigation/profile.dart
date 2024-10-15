@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class Profile extends StatelessWidget {
 //constructor
@@ -16,7 +18,7 @@ class Profile extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Perfil'),
       ),
-      body: SingleChildScrollView(
+      body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -44,6 +46,7 @@ class Profile extends StatelessWidget {
                 ],
               ),
             ),
+            /*
             Image.asset('assets/logo.png',width: double.infinity,height: 300,),
             const Padding(
               padding: EdgeInsets.all(16.0),
@@ -69,7 +72,16 @@ class Profile extends StatelessWidget {
               padding: EdgeInsets.all(8.0),
               child: Text("data"),
             ),
-
+            */
+            Spacer(),
+            SizedBox(
+              width:double.infinity,
+              height:48,
+              child: ElevatedButton(
+                onPressed: () async => await FirebaseAuth.instance.signOut(),
+                child:Text("Cerrar sesión")
+              )
+            )
             //estudiar expanded
           ],
         
