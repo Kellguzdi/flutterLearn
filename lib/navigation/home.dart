@@ -1,4 +1,20 @@
 import 'package:flutter/material.dart';
+//crear un stateful widget
+//Dentro del widget crear la instancia con final
+
+// void initState() async {
+//  super.initState()
+//  await db.collection("restaurants").get().then((event) {
+//  for (var doc in event.docs) {
+//    print("${doc.id} => ${doc.data()}");
+//  }
+//});
+//
+//
+//
+//
+//}
+
 
 class Home extends StatelessWidget {
   const Home({
