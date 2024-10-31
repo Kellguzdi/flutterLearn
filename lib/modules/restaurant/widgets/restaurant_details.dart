@@ -34,7 +34,7 @@ class RestaurantDetails extends StatelessWidget {
                                     builder:( BuildContext context){
                                         return Container(
                                             width: MediaQuery.of(context).size.width,
-                                            margin: EdgeInsets.symmetric(horizontal: 5.0),        
+                                            margin: const EdgeInsets.symmetric(horizontal: 5.0),        
                                             child: Image.network(
                                                 i, 
                                                 fit: BoxFit.cover, 
@@ -47,8 +47,8 @@ class RestaurantDetails extends StatelessWidget {
                         SizedBox(height:20),
                         Row(
                             children:[
-                                Text(name,style:TextStyle(fontWeight:FontWeight.bold)),
-                                Expanded(
+                                Text(name,style:const TextStyle(fontWeight:FontWeight.bold)),
+                                const Expanded(
                                     child: Column()
                                 ),
                                 StarRating(
@@ -60,7 +60,7 @@ class RestaurantDetails extends StatelessWidget {
                                 )
                             ]
                         ),
-                        SizedBox(
+                        const SizedBox(
                             height:20
                         ),
                         SizedBox(

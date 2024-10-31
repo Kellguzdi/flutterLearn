@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyA6eIfd5HQuk98hwizDk6M3bsHXF1xz1XU"/>    
         android:label="learning"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
