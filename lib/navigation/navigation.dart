@@ -22,7 +22,8 @@ class _NavigationState extends State<Navigation> {
     Home(),
     Top(),
     Profile(),
-    Reservations()
+    Reservations(),
+    MapSample()
   ];
 
   void _onItemTapped(int index) {
@@ -53,6 +54,10 @@ class _NavigationState extends State<Navigation> {
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Perfil',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.map),
+            label: 'Mapa',
           ),
         ],
         currentIndex: _selectedIndex,
