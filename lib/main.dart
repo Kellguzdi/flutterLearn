@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learning/modules/auth/screens/login.dart';
+import 'package:learning/modules/tutorial/screens/tutorial.dart';
 import 'package:learning/navigation/home.dart';
 import 'package:learning/navigation/navigation.dart';
 import 'package:learning/navigation/reservations.dart';
@@ -37,7 +38,8 @@ class MainApp extends StatelessWidget {
         '/reservations': (context) => const Reservations(),
         '/profile': (context) => const Profile(),
         '/login': (context) => const Login(),
-        '/register': (context) => const CreateAccount()
+        '/register': (context) => const CreateAccount(),
+        '/tutorial': (context) => const Tutorial()
       },
     );
   }

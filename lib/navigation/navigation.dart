@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:learning/modules/map/map_sample.dart';
 import 'package:learning/navigation/home.dart';
 import 'package:learning/navigation/profile.dart';
 import 'package:learning/navigation/reservations.dart';
 import 'package:learning/navigation/top.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Navigation extends StatefulWidget {
 //constructor
+  final bool showTutorial;
   const Navigation({
-    super.key,
+    super.key, this.showTutorial = false,
   });
   @override
   State<Navigation> createState() => _NavigationState();
@@ -31,6 +34,22 @@ class _NavigationState extends State<Navigation> {
     setState(() {
       _selectedIndex = index;
     });
+  }
+
+  Future<void> _checkTutorial() async{
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final bool? tutorial = prefs.getBool('tutorial');
+    if(!widget.showTutorial){
+      if(tutorial == null){
+        Navigator.pushReplacementNamed(context, '/tutorial');
+      }
+    }
+  }
+
+  @override
+  void initState(){
+    super.initState();
+    _checkTutorial();
   }
 
   @override
